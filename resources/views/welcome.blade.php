@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PT. DERMILOSOFI | Skin Solutions</title>
     <!-- Favicon / tab logo -->
-    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('storage/images/logo.png') }}" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -16,7 +16,7 @@
     <style>
         * { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
         body {
-            background: linear-gradient(135deg, rgba(0,74,173,0.1) 0%, rgba(255,255,255,0.9) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center fixed;
+            background: linear-gradient(135deg, rgba(0,74,173,0.1) 0%, rgba(255,255,255,0.9) 100%), url('{{ asset('storage/images/background/background1.png') }}') no-repeat center center fixed;
             background-size: cover;
             color: #222;
             min-height: 100vh;
@@ -34,7 +34,7 @@
 
         /* Background with PNG image */
         .leaf-bg {
-            background: linear-gradient(135deg, rgba(0,74,173,0.2) 0%, rgba(255,255,255,0.9) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center;
+            background: linear-gradient(135deg, rgba(0,74,173,0.2) 0%, rgba(255,255,255,0.9) 100%), url('{{ asset('storage/images/background/background1.png') }}') no-repeat center center;
             background-size: cover;
             position: relative;
         }
@@ -61,7 +61,7 @@
             background: rgba(255,255,255,0.5);
         }
         .leaf-bg:nth-child(even) {
-            background: linear-gradient(135deg, rgba(0,74,173,0.15) 0%, rgba(255,255,255,0.85) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center;
+            background: linear-gradient(135deg, rgba(0,74,173,0.15) 0%, rgba(255,255,255,0.85) 100%), url('{{ asset('storage/images/background/background1.png') }}') no-repeat center center;
             background-size: cover;
         }
         .leaf-bg:nth-child(even)::before {
@@ -78,7 +78,7 @@
             backdrop-filter: blur(5px);
         }
         #hero {
-            background: linear-gradient(135deg, rgba(0,74,173,0.3) 0%, rgba(255,255,255,0.7) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center;
+            background: linear-gradient(135deg, rgba(0,74,173,0.3) 0%, rgba(255,255,255,0.7) 100%), url('{{ asset('storage/images/background/background1.png') }}') no-repeat center center;
             background-size: cover;
             text-align: center;
             padding: 150px 20px;
@@ -142,7 +142,7 @@
             color: white !important;
         }
         footer {
-            background: linear-gradient(135deg, rgba(0,74,173,0.9) 0%, rgba(0,123,255,0.9) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center;
+            background: linear-gradient(135deg, rgba(0,74,173,0.9) 0%, rgba(0,123,255,0.9) 100%), url('{{ asset('storage/images/background/background1.png') }}') no-repeat center center;
             background-size: cover;
             color: white;
             text-align: center;
@@ -178,7 +178,7 @@
             position: absolute;
             width: 30px;
             height: 30px;
-            background: url('{{ asset('images/daun.png') }}') no-repeat center center;
+            background: url('{{ asset('storage/images/daun.png') }}') no-repeat center center;
             background-size: contain;
             animation: fall linear infinite;
             opacity: 0.8;
@@ -354,7 +354,7 @@
         }
         .about-section {
             position: relative;
-            background: linear-gradient(135deg, rgba(0,74,173,0.1) 0%, rgba(255,255,255,0.95) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center;
+            background: linear-gradient(135deg, rgba(0,74,173,0.1) 0%, rgba(255,255,255,0.95) 100%), url('{{ asset('storage/images/background/background1.png') }}') no-repeat center center;
             background-size: cover;
             margin-top: -60px;
             border-radius: 20px;
@@ -404,7 +404,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo">
+                <img src="{{ asset('storage/images/logo.png') }}" alt="Logo">
                 <span class="fw-bold" style="color: #0292d8;">DERMILOSOFI</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -448,7 +448,7 @@
                                     @if($blog->image_path)
                                         <img src="{{ asset('storage/' . $blog->image_path) }}" class="img-fluid mb-2 rounded" alt="{{ $blog->title }}" style="max-height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;" data-aos="fade-up" data-aos-delay="200">
                                     @else
-                                        <img src="{{ asset('images/BLOG/1.png') }}" class="img-fluid mb-2 rounded" alt="{{ $blog->title }}" style="max-height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;" data-aos="fade-up" data-aos-delay="200">
+                                        <img src="{{ asset('storage/images/BLOG/1.png') }}" class="img-fluid mb-2 rounded" alt="{{ $blog->title }}" style="max-height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;" data-aos="fade-up" data-aos-delay="200">
                                     @endif
                                     <h5 class="text-white mb-2" style="font-weight: 600; font-size: 1.2rem;">{{ $blog->title }}</h5>
                                     <p class="text-white mb-3" style="font-size: 1rem; line-height: 1.5;">{{ Str::limit($blog->excerpt ?: strip_tags($blog->content), 100) }}</p>
@@ -496,7 +496,7 @@
                     @if($aboutProfile->image_path)
                         <img src="{{ asset('storage/' . $aboutProfile->image_path) }}" alt="CEO Founder">
                     @else
-                        <img src="{{ asset('images/Profil/ceo.jpg') }}" alt="CEO Founder">
+                        <img src="{{ asset('storage/images/Profil/ceo.jpg') }}" alt="CEO Founder">
                     @endif
                     <p class="fw-bold mt-2 mb-0" style="font-size: 1.1rem;">CEO Founder - Mr. Ruly Haykal</p>
                 </div>
@@ -534,33 +534,33 @@
             <h5 class="fw-bold text-center text-primary mb-4" style="font-size: 1.4rem;">Galeri Profil Perusahaan</h5>
             <div class="row g-3">
                 <div class="col-md-4 col-sm-6">
-                    <a href="{{ asset('images/Profil/branding-min-300x300.png') }}" data-lightbox="profil" data-title="Branding">
-                        <img src="{{ asset('images/Profil/branding-min-300x300.png') }}" class="img-fluid rounded shadow-sm" alt="Branding" style="width: 100%; height: 200px; object-fit: cover;">
+                    <a href="{{ asset('storage/images/Profil/branding-min-300x300.png') }}" data-lightbox="profil" data-title="Branding">
+                        <img src="{{ asset('storage/images/Profil/branding-min-300x300.png') }}" class="img-fluid rounded shadow-sm" alt="Branding" style="width: 100%; height: 200px; object-fit: cover;">
                     </a>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <a href="{{ asset('images/Profil/establishment-min-300x300.png') }}" data-lightbox="profil" data-title="Establishment">
-                        <img src="{{ asset('images/Profil/establishment-min-300x300.png') }}" class="img-fluid rounded shadow-sm" alt="Establishment" style="width: 100%; height: 200px; object-fit: cover;">
+                    <a href="{{ asset('storage/images/Profil/establishment-min-300x300.png') }}" data-lightbox="profil" data-title="Establishment">
+                        <img src="{{ asset('storage/images/Profil/establishment-min-300x300.png') }}" class="img-fluid rounded shadow-sm" alt="Establishment" style="width: 100%; height: 200px; object-fit: cover;">
                     </a>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <a href="{{ asset('images/Profil/franchise-min-1-300x300.png') }}" data-lightbox="profil" data-title="Franchise">
-                        <img src="{{ asset('images/Profil/franchise-min-1-300x300.png') }}" class="img-fluid rounded shadow-sm" alt="Franchise" style="width: 100%; height: 200px; object-fit: cover;">
+                    <a href="{{ asset('storage/images/Profil/franchise-min-1-300x300.png') }}" data-lightbox="profil" data-title="Franchise">
+                        <img src="{{ asset('storage/images/Profil/franchise-min-1-300x300.png') }}" class="img-fluid rounded shadow-sm" alt="Franchise" style="width: 100%; height: 200px; object-fit: cover;">
                     </a>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <a href="{{ asset('images/Profil/konsultasi-min-1-600x600.png') }}" data-lightbox="profil" data-title="Konsultasi">
-                        <img src="{{ asset('images/Profil/konsultasi-min-1-600x600.png') }}" class="img-fluid rounded shadow-sm" alt="Konsultasi" style="width: 100%; height: 200px; object-fit: cover;">
+                    <a href="{{ asset('storage/images/Profil/konsultasi-min-1-600x600.png') }}" data-lightbox="profil" data-title="Konsultasi">
+                        <img src="{{ asset('storage/images/Profil/konsultasi-min-1-600x600.png') }}" class="img-fluid rounded shadow-sm" alt="Konsultasi" style="width: 100%; height: 200px; object-fit: cover;">
                     </a>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <a href="{{ asset('images/Profil/management-min-300x300.png') }}" data-lightbox="profil" data-title="Management">
-                        <img src="{{ asset('images/Profil/management-min-300x300.png') }}" class="img-fluid rounded shadow-sm" alt="Management" style="width: 100%; height: 200px; object-fit: cover;">
+                    <a href="{{ asset('storage/images/Profil/management-min-300x300.png') }}" data-lightbox="profil" data-title="Management">
+                        <img src="{{ asset('storage/images/Profil/management-min-300x300.png') }}" class="img-fluid rounded shadow-sm" alt="Management" style="width: 100%; height: 200px; object-fit: cover;">
                     </a>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <a href="{{ asset('images/Profil/sales-min-300x300.png') }}" data-lightbox="profil" data-title="Sales">
-                        <img src="{{ asset('images/Profil/sales-min-300x300.png') }}" class="img-fluid rounded shadow-sm" alt="Sales" style="width: 100%; height: 200px; object-fit: cover;">
+                    <a href="{{ asset('storage/images/Profil/sales-min-300x300.png') }}" data-lightbox="profil" data-title="Sales">
+                        <img src="{{ asset('storage/images/Profil/sales-min-300x300.png') }}" class="img-fluid rounded shadow-sm" alt="Sales" style="width: 100%; height: 200px; object-fit: cover;">
                     </a>
                 </div>
             </div>
@@ -576,7 +576,7 @@
                     @if($team->image_path)
                         <img src="{{ asset('storage/' . $team->image_path) }}" class="img-fluid rounded shadow-sm" alt="{{ $team->content }}">
                     @else
-                        <img src="{{ asset('images/Profil/konsultasi-min-1-600x600.png') }}" class="img-fluid rounded shadow-sm" alt="{{ $team->content }}">
+                        <img src="{{ asset('storage/images/Profil/konsultasi-min-1-600x600.png') }}" class="img-fluid rounded shadow-sm" alt="{{ $team->content }}">
                     @endif
                     <p class="mt-2 fw-bold" style="font-size: 1rem;">{{ $team->content }}</p>
                 </div>
@@ -811,7 +811,7 @@
                                 <img src="{{ asset('storage/' . $product->image_path) }}" class="img-fluid mb-3" alt="{{ $product->name }}">
                             </a>
                         @else
-                            <img src="{{ asset('images/PRODUK MAKLOON/ACNE SPOT DRYING LOTION.jpg') }}" class="img-fluid mb-3" alt="{{ $product->name }}">
+                            <img src="{{ asset('storage/images/PRODUK MAKLOON/ACNE SPOT DRYING LOTION.jpg') }}" class="img-fluid mb-3" alt="{{ $product->name }}">
                         @endif
                         <h6 class="text-center">{{ $product->name }}</h6>
                         @if($product->price)
@@ -838,7 +838,7 @@
                                 <img src="{{ asset('storage/' . $product->image_path) }}" class="img-fluid mb-3" alt="{{ $product->name }}">
                             </a>
                         @else
-                            <img src="{{ asset('images/PRODUK MESIN/1.png') }}" class="img-fluid mb-3" alt="{{ $product->name }}">
+                            <img src="{{ asset('storage/images/PRODUK MESIN/1.png') }}" class="img-fluid mb-3" alt="{{ $product->name }}">
                         @endif
                         <h6 class="text-center">{{ $product->name }}</h6>
                         @if($product->price)
@@ -869,7 +869,7 @@
                                 <img src="{{ asset('storage/' . $blog->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
                             </a>
                         @else
-                            <img src="{{ asset('images/BLOG/1.png') }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
+                            <img src="{{ asset('storage/images/BLOG/1.png') }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
                         @endif
                         <h6 style="font-size: 1rem;">{{ $blog->title }}</h6>
                         <p style="font-size: 0.9rem;">{{ Str::limit($blog->excerpt ?: strip_tags($blog->content), 100) }}</p>
@@ -895,7 +895,7 @@
                     @if($blog->image_path)
                         <img src="{{ asset('storage/' . $blog->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="width: 100%; border-radius: 10px !important;">
                     @else
-                        <img src="{{ asset('images/BLOG/1.png') }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="width: 100%; border-radius: 10px !important;">
+                        <img src="{{ asset('storage/images/BLOG/1.png') }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="width: 100%; border-radius: 10px !important;">
                     @endif
                     {!! $blog->content !!}
                 </div>
