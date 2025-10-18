@@ -1,4 +1,4 @@
-<?php
+e<?php
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApplicantController;
@@ -14,10 +14,11 @@ use App\Models\Profile;
 Route::get('/', function () {
     $products = Product::where('is_active', true)->get();
     $blogs = Blog::where('is_active', true)->orderBy('published_date', 'desc')->get();
-    $profiles = Profile::where('is_active', true)->get();
 
-    return view('welcome', compact('products', 'blogs', 'profiles'));
+    return view('welcome', compact('products', 'blogs'));
 });
+
+
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 
@@ -39,6 +40,5 @@ Route::post('/apply', [ApplicantController::class, 'store'])->name('apply.post')
 Route::middleware(['auth'])->group(function () {
     Route::resource('products', ProductController::class);
     Route::resource('blogs', BlogController::class);
-    Route::resource('profiles', ProfileController::class);
     Route::resource('reports', ReportController::class);
 });

@@ -1,0 +1,37 @@
+/**
+ * Lirik Lagu: Everything U Are
+ *
+ * Catatan: Lirik ini ditulis sebagai konstanta (const) 
+ * dalam format array untuk memisahkan setiap baris.
+ */
+
+const everythingUAreLyrics = [
+    // Verse 1
+    "Seada-adanya sekurang-kurangnya",
+    "Walau sulit utarakan hatiku dengan indah",
+    "Walau jarang ku bernyanyi dengan cara yang indah",
+    "Tapi tak sekali pun kisahku pernah kau bantah hu",
+    "", // Baris kosong untuk jeda
+    // Verse 2
+    "Cerita kita tak jauh berbeda",
+    "Got beat down by the world sometimes I wanna fold",
+    "Namun suratmu kan ku ceritakan ke anak-anakku nanti",
+    "Bahwa aku pernah dicintai with everything u are",
+    "", // Baris kosong untuk jeda
+    // Outro / Kesimpulan
+    "Fully as I am with everything u are"
+];
+
+// Fungsi untuk menampilkan lirik (opsional, untuk tampilan lebih 'coding')
+function displayLyrics(lyricsArray) {
+    console.log("--- Mulai Lirik Everything U Are ---");
+    lyricsArray.forEach((line, index) => {
+        // Menggunakan padStart untuk penomoran baris (seperti line number di VSCode)
+        const lineNumber = String(index + 1).padStart(2, '0');
+        console.log(`// ${lineNumber}: ${line}`);
+    });
+    console.log("--- Selesai Lirik ---");
+}
+
+// Panggil fungsi (dalam VSCode, ini bisa dijalankan di Terminal)
+displayLyrics(everythingUAreLyrics);

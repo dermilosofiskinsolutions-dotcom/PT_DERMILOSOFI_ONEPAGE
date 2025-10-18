@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PT. DERMILOSOFI | Skin Solutions</title>
     <!-- Favicon / tab logo -->
-    <link rel="icon" type="image/png" href="{{ asset('storage/images/logo.png') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -15,8 +15,12 @@
 
     <style>
         * { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        html, body {
+            overflow-x: hidden;
+        }
         body {
-            background: linear-gradient(135deg, rgba(0,74,173,0.1) 0%, rgba(255,255,255,0.9) 100%), url('{{ asset('storage/images/background/background1.png') }}') no-repeat center center fixed;
+            margin: 0;
+            background: linear-gradient(135deg, rgba(0,74,173,0.1) 0%, rgba(255,255,255,0.9) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center;
             background-size: cover;
             color: #222;
             min-height: 100vh;
@@ -28,13 +32,13 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             padding: 3px 0;
         }
-        .navbar-brand img { height: 25px; margin-right: 5px; }
-        .navbar-brand span { font-size: 1.2rem; font-weight: 700; }
+        .navbar-brand img { height: 40px; margin-right: 8px; }
+        .navbar-brand span { font-size: 1.4rem; font-weight: 700; }
         .nav-link { color: #004aad !important; font-weight: 600; font-size: 0.9rem; margin: 0 8px; }
 
         /* Background with PNG image */
         .leaf-bg {
-            background: linear-gradient(135deg, rgba(0,74,173,0.2) 0%, rgba(255,255,255,0.9) 100%), url('{{ asset('storage/images/background/background1.png') }}') no-repeat center center;
+            background: linear-gradient(135deg, rgba(0,74,173,0.2) 0%, rgba(255,255,255,0.9) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center;
             background-size: cover;
             position: relative;
         }
@@ -61,7 +65,7 @@
             background: rgba(255,255,255,0.5);
         }
         .leaf-bg:nth-child(even) {
-            background: linear-gradient(135deg, rgba(0,74,173,0.15) 0%, rgba(255,255,255,0.85) 100%), url('{{ asset('storage/images/background/background1.png') }}') no-repeat center center;
+            background: linear-gradient(135deg, rgba(0,74,173,0.15) 0%, rgba(255,255,255,0.85) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center;
             background-size: cover;
         }
         .leaf-bg:nth-child(even)::before {
@@ -78,7 +82,7 @@
             backdrop-filter: blur(5px);
         }
         #hero {
-            background: linear-gradient(135deg, rgba(0,74,173,0.3) 0%, rgba(255,255,255,0.7) 100%), url('{{ asset('storage/images/background/background1.png') }}') no-repeat center center;
+            background: linear-gradient(135deg, rgba(0,74,173,0.3) 0%, rgba(255,255,255,0.7) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center;
             background-size: cover;
             text-align: center;
             padding: 150px 20px;
@@ -98,6 +102,12 @@
         #hero .container-fluid {
             position: relative;
             z-index: 2;
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1400px;
+            box-sizing: border-box;
         }
 
         #hero h1 { font-size: 2.8rem; font-weight: 700; color: #004aad; margin-bottom: 20px; }
@@ -142,7 +152,7 @@
             color: white !important;
         }
         footer {
-            background: linear-gradient(135deg, rgba(0,74,173,0.9) 0%, rgba(0,123,255,0.9) 100%), url('{{ asset('storage/images/background/background1.png') }}') no-repeat center center;
+            background: linear-gradient(135deg, rgba(0,74,173,0.9) 0%, rgba(0,123,255,0.9) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center;
             background-size: cover;
             color: white;
             text-align: center;
@@ -165,39 +175,52 @@
             position: relative;
             z-index: 2;
         }
-        .rain {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-        .raindrop {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background: url('{{ asset('storage/images/daun.png') }}') no-repeat center center;
-            background-size: contain;
-            animation: fall linear infinite;
-            opacity: 0.8;
-        }
-        @keyframes fall {
-            0% { transform: translateY(-100px) rotate(0deg); }
-            100% { transform: translateY(100vh) rotate(360deg); }
-        }
+
         .pulse {
             animation: pulse 2s infinite;
         }
+        /* Keyframe Animations */
+        
+        /* Pulse Animation */
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
-        @media (max-width:768px){
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideInLeft {
+            0% { transform: translateX(-20px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInRight {
+            0% { transform: translateX(20px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes zoomIn {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @media (max-width:760px){
             #hero h1{font-size:2rem;}
-            #hero { padding: 120px 20px 150px 20px !important; } /* Increased top padding to account for fixed navbar and more bottom padding for button */
+            #hero { 
+                padding: 140px 20px 180px 20px !important; /* Increased top and bottom padding for better spacing */
+                min-height: auto !important;
+                height: auto !important;
+                overflow: visible !important;
+            }
             section{min-height: auto !important; padding: 100px 20px 70px 20px !important; display: block !important;}
             .container-fluid{background: transparent !important; box-shadow: none !important; border-radius: 0 !important; padding: 0 !important; margin: 0 !important;}
             #hero .container-fluid {
@@ -224,10 +247,7 @@
             .vision-mission{margin-top: 20px; padding: 20px;}
             footer{margin-top: 20px; padding: 30px 20px;}
 
-            /* Disable heavy animations on mobile for better performance */
-            .rain { display: none !important; }
-            .pulse { animation: none !important; }
-            .raindrop { display: none !important; }
+
 
             /* Responsive carousel adjustments */
             #heroCarousel { max-width: 100% !important; }
@@ -270,7 +290,7 @@
         }
 
         /* Mobile carousel controls positioning */
-        @media (max-width: 768px) {
+        @media (max-width: 760px) {
             .carousel-control-prev, .carousel-control-next {
                 width: 40px !important;
                 height: 40px !important;
@@ -346,7 +366,7 @@
             line-height: 1.6;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 760px) {
             .columns {
                 flex-direction: column;
                 align-items: center;
@@ -354,7 +374,7 @@
         }
         .about-section {
             position: relative;
-            background: linear-gradient(135deg, rgba(0,74,173,0.1) 0%, rgba(255,255,255,0.95) 100%), url('{{ asset('storage/images/background/background1.png') }}') no-repeat center center;
+            background: linear-gradient(135deg, rgba(0,74,173,0.1) 0%, rgba(255,255,255,0.95) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center;
             background-size: cover;
             margin-top: -60px;
             border-radius: 20px;
@@ -404,7 +424,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="{{ asset('storage/images/logo.png') }}" alt="Logo">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo">
                 <span class="fw-bold" style="color: #0292d8;">DERMILOSOFI</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -427,13 +447,12 @@
 
     <!-- Hero -->
     <section id="hero" data-aos="fade-up" style="position: relative;">
-        <div class="rain" id="rain"></div>
         <div class="container-fluid text-center" style="position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin-top: 60px;">
             <div>
                 <h1 data-aos="fade-up" data-aos-delay="100">Solusi Maklon Skincare Profesional</h1>
                 <p data-aos="fade-up" data-aos-delay="400">PT. DERMILOSOFI hadir membantu Anda mewujudkan brand skincare impian dengan layanan formulasi, produksi, dan legalitas lengkap.</p>
             </div>
-            <div style="width: 100%; max-width: 1400px; margin-top: 30px; display: flex; justify-content: center; align-items: center;">
+                <div style="width: 100%; max-width: 1400px; margin: 30px auto 0 auto; display: flex; justify-content: center; align-items: center;">
                 <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" style="flex: 1; max-width: 1200px;">
                     <div class="carousel-indicators">
                         @foreach($blogs->take(4) as $index => $blog)
@@ -445,11 +464,11 @@
                         <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
                             <div class="d-flex justify-content-center align-items-center" style="height: 350px;">
                                 <div class="text-center" style="max-width: 500px;">
-                                    @if($blog->image_path)
-                                        <img src="{{ asset('storage/' . $blog->image_path) }}" class="img-fluid mb-2 rounded" alt="{{ $blog->title }}" style="max-height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;" data-aos="fade-up" data-aos-delay="200">
-                                    @else
-                                        <img src="{{ asset('storage/images/BLOG/1.png') }}" class="img-fluid mb-2 rounded" alt="{{ $blog->title }}" style="max-height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;" data-aos="fade-up" data-aos-delay="200">
-                                    @endif
+@if($blog->image_path)
+    <img src="{{ asset('images/' . str_replace('blogs/', 'BLOG/', $blog->image_path)) }}" class="img-fluid mb-2 rounded" alt="{{ $blog->title }}" style="max-height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;" data-aos="fade-up" data-aos-delay="200">
+@else
+    <img src="{{ asset('images/BLOG/1.png') }}" class="img-fluid mb-2 rounded" alt="{{ $blog->title }}" style="max-height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;" data-aos="fade-up" data-aos-delay="200">
+@endif
                                     <h5 class="text-white mb-2" style="font-weight: 600; font-size: 1.2rem;">{{ $blog->title }}</h5>
                                     <p class="text-white mb-3" style="font-size: 1rem; line-height: 1.5;">{{ Str::limit($blog->excerpt ?: strip_tags($blog->content), 100) }}</p>
                                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#blogModal{{ $blog->id }}">Baca Selengkapnya</button>
@@ -482,22 +501,10 @@
             </div>
         </div>
 
-        @php
-            $aboutProfile = $profiles->where('section', 'about')->first();
-            $visionProfile = $profiles->where('section', 'vision')->first();
-            $missionProfile = $profiles->where('section', 'mission')->first();
-            $teamProfiles = $profiles->where('section', 'team');
-        @endphp
-
-        @if($aboutProfile)
         <div class="row justify-content-center mt-4">
             <div class="col-md-6 col-lg-4">
                 <div class="ceo-card text-center">
-                    @if($aboutProfile->image_path)
-                        <img src="{{ asset('storage/' . $aboutProfile->image_path) }}" alt="CEO Founder">
-                    @else
-                        <img src="{{ asset('storage/images/Profil/ceo.jpg') }}" alt="CEO Founder">
-                    @endif
+                        <img src="{{ asset('images/Profil/ceo.jpg') }}" alt="CEO Founder">
                     <p class="fw-bold mt-2 mb-0" style="font-size: 1.1rem;">CEO Founder - Mr. Ruly Haykal</p>
                 </div>
             </div>
@@ -506,27 +513,30 @@
         <div class="row mt-4">
             <div class="col-12">
                 <p style="font-size: 1.15rem; line-height: 1.7;">
-                    {!! $aboutProfile->content !!}
+                    PT. DERMILOSOFI adalah perusahaan yang bergerak di bidang maklon skincare dengan komitmen tinggi terhadap kualitas dan inovasi. Kami menyediakan layanan formulasi, produksi, dan legalitas produk skincare yang lengkap untuk membantu mewujudkan brand impian Anda.
                 </p>
             </div>
         </div>
-        @endif
 
         <!-- VISION & MISSION -->
         <div class="vision-mission mt-4">
-            @if($visionProfile)
-            <h4 class="fw-bold text-primary" style="font-size: 1.5rem;">VISI</h4>
+            <h4 class="fw-bold text-primary" style="font-size: 1.5rem;">🌟 VISI</h4>
             <p style="font-size: 1.1rem; line-height: 1.6;">
-                {!! $visionProfile->content !!}
+              Menjadi perusahaan maklon skincare terdepan di Indonesia yang memberikan solusi inovatif, berkualitas tinggi, dan berdaya saing global untuk mewujudkan impian brand kecantikan setiap klien.
             </p>
-            @endif
 
-            @if($missionProfile)
-            <h4 class="fw-bold text-primary mt-4" style="font-size: 1.5rem;">MISI</h4>
+            <h4 class="fw-bold text-primary mt-4" style="font-size: 1.5rem;">🎯 MISI</h4>
             <p style="font-size: 1.1rem; line-height: 1.6;">
-                {!! $missionProfile->content !!}
+                -Memberikan layanan maklon profesional dengan standar kualitas internasional, mulai dari formulasi, produksi, hingga legalitas produk.
+                 <br>
+                -Mendukung pengembangan brand skincare lokal agar mampu bersaing di pasar nasional dan internasional.
+                 <br>
+                -Mengutamakan riset dan inovasi berkelanjutan untuk menghasilkan produk yang aman, efektif, dan sesuai tren pasar.
+ <br>
+                -Membangun kemitraan jangka panjang dengan setiap klien melalui transparansi, kepercayaan, dan layanan yang responsif.
+<br>
+                -Berkomitmen terhadap keberlanjutan lingkungan dengan menerapkan praktik produksi yang ramah lingkungan dan efisien.
             </p>
-            @endif
         </div>
 
         <!-- COMPANY PROFILE GALLERY -->
@@ -534,56 +544,25 @@
             <h5 class="fw-bold text-center text-primary mb-4" style="font-size: 1.4rem;">Galeri Profil Perusahaan</h5>
             <div class="row g-3">
                 <div class="col-md-4 col-sm-6">
-                    <a href="{{ asset('storage/images/Profil/branding-min-300x300.png') }}" data-lightbox="profil" data-title="Branding">
-                        <img src="{{ asset('storage/images/Profil/branding-min-300x300.png') }}" class="img-fluid rounded shadow-sm" alt="Branding" style="width: 100%; height: 200px; object-fit: cover;">
-                    </a>
+                    <img src="{{ asset('images/Profil/SUASANA PABRIK SKINCARE DAN KOSMETIK. DENGAN MESIN PRODUKSI SEDANG MENGISI BOTOL KEMASAN SKINCARE (1).jpg') }}" class="img-fluid rounded shadow-sm" alt="Company Profile" style="width: 100%; height: 200px; object-fit: cover;">
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <a href="{{ asset('storage/images/Profil/establishment-min-300x300.png') }}" data-lightbox="profil" data-title="Establishment">
-                        <img src="{{ asset('storage/images/Profil/establishment-min-300x300.png') }}" class="img-fluid rounded shadow-sm" alt="Establishment" style="width: 100%; height: 200px; object-fit: cover;">
-                    </a>
+                    <img src="{{ asset('images/Profil/SUASANA PABRIK SKINCARE DAN KOSMETIK. DENGAN MESIN PRODUKSI SEDANG MENGISI BOTOL KEMASAN SKINCARE (2).jpg') }}" class="img-fluid rounded shadow-sm" alt="Company Profile" style="width: 100%; height: 200px; object-fit: cover;">
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <a href="{{ asset('storage/images/Profil/franchise-min-1-300x300.png') }}" data-lightbox="profil" data-title="Franchise">
-                        <img src="{{ asset('storage/images/Profil/franchise-min-1-300x300.png') }}" class="img-fluid rounded shadow-sm" alt="Franchise" style="width: 100%; height: 200px; object-fit: cover;">
-                    </a>
+                    <img src="{{ asset('images/Profil/SUASANA PABRIK SKINCARE DAN KOSMETIK. DENGAN MESIN PRODUKSI SEDANG MENGISI BOTOL KEMASAN SKINCARE.jpg') }}" class="img-fluid rounded shadow-sm" alt="Company Profile" style="width: 100%; height: 200px; object-fit: cover;">
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <a href="{{ asset('storage/images/Profil/konsultasi-min-1-600x600.png') }}" data-lightbox="profil" data-title="Konsultasi">
-                        <img src="{{ asset('storage/images/Profil/konsultasi-min-1-600x600.png') }}" class="img-fluid rounded shadow-sm" alt="Konsultasi" style="width: 100%; height: 200px; object-fit: cover;">
-                    </a>
+                    <img src="{{ asset('images/Profil/BUAT GAMBAR PRODUK SKINCARE SEDANG DI PRODUKSI (1).jpg') }}" class="img-fluid rounded shadow-sm" alt="Company Profile" style="width: 100%; height: 200px; object-fit: cover;">
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <a href="{{ asset('storage/images/Profil/management-min-300x300.png') }}" data-lightbox="profil" data-title="Management">
-                        <img src="{{ asset('storage/images/Profil/management-min-300x300.png') }}" class="img-fluid rounded shadow-sm" alt="Management" style="width: 100%; height: 200px; object-fit: cover;">
-                    </a>
+                    <img src="{{ asset('images/Profil/BUAT GAMBAR PRODUK SKINCARE SEDANG DI PRODUKSI (2).jpg') }}" class="img-fluid rounded shadow-sm" alt="Company Profile" style="width: 100%; height: 200px; object-fit: cover;">
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <a href="{{ asset('storage/images/Profil/sales-min-300x300.png') }}" data-lightbox="profil" data-title="Sales">
-                        <img src="{{ asset('storage/images/Profil/sales-min-300x300.png') }}" class="img-fluid rounded shadow-sm" alt="Sales" style="width: 100%; height: 200px; object-fit: cover;">
-                    </a>
+                    <img src="{{ asset('images/Profil/BUAT GAMBAR PRODUK SKINCARE SEDANG DI PRODUKSI (3).jpg') }}" class="img-fluid rounded shadow-sm" alt="Company Profile" style="width: 100%; height: 200px; object-fit: cover;">
                 </div>
             </div>
         </div>
-
-        <!-- TEAM -->
-        @if($teamProfiles->count() > 0)
-        <div class="mt-5">
-            <h5 class="fw-bold text-center text-primary mb-4" style="font-size: 1.4rem;">With Professional Team Work</h5>
-            <div class="row text-center">
-                @foreach($teamProfiles as $team)
-                <div class="col-md-3 col-6 mb-3">
-                    @if($team->image_path)
-                        <img src="{{ asset('storage/' . $team->image_path) }}" class="img-fluid rounded shadow-sm" alt="{{ $team->content }}">
-                    @else
-                        <img src="{{ asset('storage/images/Profil/konsultasi-min-1-600x600.png') }}" class="img-fluid rounded shadow-sm" alt="{{ $team->content }}">
-                    @endif
-                    <p class="mt-2 fw-bold" style="font-size: 1rem;">{{ $team->content }}</p>
-                </div>
-                @endforeach
-            </div>
-        </div>
-        @endif
     </section>
 
     <!-- Alur Maklon -->
@@ -810,9 +789,9 @@
                             <a href="{{ asset('storage/' . $product->image_path) }}" data-lightbox="maklon" data-title="{{ $product->name }}">
                                 <img src="{{ asset('storage/' . $product->image_path) }}" class="img-fluid mb-3" alt="{{ $product->name }}">
                             </a>
-                        @else
-                            <img src="{{ asset('storage/images/PRODUK MAKLOON/ACNE SPOT DRYING LOTION.jpg') }}" class="img-fluid mb-3" alt="{{ $product->name }}">
-                        @endif
+@else
+    <img src="{{ asset('images/PRODUK MAKLOON/ACNE SPOT DRYING LOTION.jpg') }}" class="img-fluid mb-3" alt="{{ $product->name }}">
+@endif
                         <h6 class="text-center">{{ $product->name }}</h6>
                         @if($product->price)
                             <p class="text-center text-primary fw-bold">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
@@ -837,9 +816,9 @@
                             <a href="{{ asset('storage/' . $product->image_path) }}" data-lightbox="mesin" data-title="{{ $product->name }}">
                                 <img src="{{ asset('storage/' . $product->image_path) }}" class="img-fluid mb-3" alt="{{ $product->name }}">
                             </a>
-                        @else
-                            <img src="{{ asset('storage/images/PRODUK MESIN/1.png') }}" class="img-fluid mb-3" alt="{{ $product->name }}">
-                        @endif
+@else
+    <img src="{{ asset('images/PRODUK MESIN/1.png') }}" class="img-fluid mb-3" alt="{{ $product->name }}">
+@endif
                         <h6 class="text-center">{{ $product->name }}</h6>
                         @if($product->price)
                             <p class="text-center text-primary fw-bold">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
@@ -868,9 +847,9 @@
                             <a href="{{ asset('storage/' . $blog->image_path) }}" data-lightbox="blog" data-title="{{ $blog->title }}">
                                 <img src="{{ asset('storage/' . $blog->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
                             </a>
-                        @else
-                            <img src="{{ asset('storage/images/BLOG/1.png') }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
-                        @endif
+@else
+    <img src="{{ asset('images/BLOG/1.png') }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
+@endif
                         <h6 style="font-size: 1rem;">{{ $blog->title }}</h6>
                         <p style="font-size: 0.9rem;">{{ Str::limit($blog->excerpt ?: strip_tags($blog->content), 100) }}</p>
                         <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#blogModal{{ $blog->id }}">Lihat</button>
@@ -892,11 +871,11 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    @if($blog->image_path)
-                        <img src="{{ asset('storage/' . $blog->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="width: 100%; border-radius: 10px !important;">
-                    @else
-                        <img src="{{ asset('storage/images/BLOG/1.png') }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="width: 100%; border-radius: 10px !important;">
-                    @endif
+@if($blog->image_path)
+    <img src="{{ asset('images/' . str_replace('blogs/', 'BLOG/', $blog->image_path)) }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="width: 100%; border-radius: 10px !important;">
+@else
+    <img src="{{ asset('images/BLOG/1.png') }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="width: 100%; border-radius: 10px !important;">
+@endif
                     {!! $blog->content !!}
                 </div>
             </div>
@@ -1178,25 +1157,7 @@
             'alwaysShowNavOnTouchDevices': true
         });
 
-        // Falling leaves animation
-        function createRaindrop() {
-            const rain = document.getElementById('rain');
-            const raindrop = document.createElement('div');
-            raindrop.className = 'raindrop';
-            raindrop.style.left = Math.random() * 100 + '%';
-            raindrop.style.animationDuration = Math.random() * 3 + 2 + 's';
-            raindrop.style.animationDelay = Math.random() * 2 + 's';
-            raindrop.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
-            rain.appendChild(raindrop);
 
-            setTimeout(() => {
-                if (rain.contains(raindrop)) {
-                    rain.removeChild(raindrop);
-                }
-            }, 5000);
-        }
-
-        setInterval(createRaindrop, 200);
 
         // Auto-slide carousels
         const testimoniCarousel = new bootstrap.Carousel(document.getElementById('testimoniCarousel'), {
