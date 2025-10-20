@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PT. DERMILOSOFI | Skin Solutions</title>
     <!-- Favicon / tab logo -->
-    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('public/images/logo.png') }}" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -20,7 +20,7 @@
         }
         body {
             margin: 0;
-            background: linear-gradient(135deg, rgba(0,74,173,0.1) 0%, rgba(255,255,255,0.9) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center;
+            background: linear-gradient(135deg, rgba(0,74,173,0.1) 0%, rgba(255,255,255,0.9) 100%), url('{{ asset('public/images/background/background1.png') }}') no-repeat center center;
             background-size: cover;
             color: #222;
             min-height: 100vh;
@@ -38,7 +38,7 @@
 
         /* Background with PNG image */
         .leaf-bg {
-            background: linear-gradient(135deg, rgba(0,74,173,0.2) 0%, rgba(255,255,255,0.9) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center;
+            background: linear-gradient(135deg, rgba(0,74,173,0.2) 0%, rgba(255,255,255,0.9) 100%), url('{{ asset('public/images/background/background1.png') }}') no-repeat center center;
             background-size: cover;
             position: relative;
         }
@@ -65,7 +65,7 @@
             background: rgba(255,255,255,0.5);
         }
         .leaf-bg:nth-child(even) {
-            background: linear-gradient(135deg, rgba(0,74,173,0.15) 0%, rgba(255,255,255,0.85) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center;
+            background: linear-gradient(135deg, rgba(0,74,173,0.15) 0%, rgba(255,255,255,0.85) 100%), url('{{ asset('public/images/background/background1.png') }}') no-repeat center center;
             background-size: cover;
         }
         .leaf-bg:nth-child(even)::before {
@@ -82,7 +82,7 @@
             backdrop-filter: blur(5px);
         }
         #hero {
-            background: linear-gradient(135deg, rgba(0,74,173,0.3) 0%, rgba(255,255,255,0.7) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center;
+            background: linear-gradient(135deg, rgba(0,74,173,0.3) 0%, rgba(255,255,255,0.7) 100%), url('{{ asset('public/images/background/background1.png') }}') no-repeat center center;
             background-size: cover;
             text-align: center;
             padding: 150px 20px;
@@ -152,7 +152,7 @@
             color: white !important;
         }
         footer {
-            background: linear-gradient(135deg, rgba(0,74,173,0.9) 0%, rgba(0,123,255,0.9) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center;
+            background: linear-gradient(135deg, rgba(0,74,173,0.9) 0%, rgba(0,123,255,0.9) 100%), url('{{ asset('public/images/background/background1.png') }}') no-repeat center center;
             background-size: cover;
             color: white;
             text-align: center;
@@ -374,7 +374,7 @@
         }
         .about-section {
             position: relative;
-            background: linear-gradient(135deg, rgba(0,74,173,0.1) 0%, rgba(255,255,255,0.95) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center;
+            background: linear-gradient(135deg, rgba(0,74,173,0.1) 0%, rgba(255,255,255,0.95) 100%), url('{{ asset('public/images/background/background1.png') }}') no-repeat center center;
             background-size: cover;
             margin-top: -60px;
             border-radius: 20px;
@@ -424,7 +424,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo">
+                <img src="{{ asset('public/images/logo.png') }}" alt="Logo">
                 <span class="fw-bold" style="color: #0292d8;">DERMILOSOFI</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -504,7 +504,7 @@
         <div class="row justify-content-center mt-4">
             <div class="col-md-6 col-lg-4">
                 <div class="ceo-card text-center">
-                        <img src="{{ asset('images/Profil/ceo.jpg') }}" alt="CEO Founder">
+                        <img src="{{ asset('public/images/Profil/ceo.jpg') }}" alt="CEO Founder">
                     <p class="fw-bold mt-2 mb-0" style="font-size: 1.1rem;">CEO Founder - Mr. Ruly Haykal</p>
                 </div>
             </div>
@@ -544,22 +544,22 @@
             <h5 class="fw-bold text-center text-primary mb-4" style="font-size: 1.4rem;">Galeri Profil Perusahaan</h5>
             <div class="row g-3">
                 <div class="col-md-4 col-sm-6">
-                    <img src="{{ asset('images/Profil/SUASANA PABRIK SKINCARE DAN KOSMETIK. DENGAN MESIN PRODUKSI SEDANG MENGISI BOTOL KEMASAN SKINCARE (1).jpg') }}" class="img-fluid rounded shadow-sm" alt="Company Profile" style="width: 100%; height: 200px; object-fit: cover;">
+                    <img src="{{ asset('public/images/Profil/SUASANA PABRIK SKINCARE DAN KOSMETIK. DENGAN MESIN PRODUKSI SEDANG MENGISI BOTOL KEMASAN SKINCARE (1).jpg') }}" class="img-fluid rounded shadow-sm" alt="Company Profile" style="width: 100%; height: 200px; object-fit: cover;">
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <img src="{{ asset('images/Profil/SUASANA PABRIK SKINCARE DAN KOSMETIK. DENGAN MESIN PRODUKSI SEDANG MENGISI BOTOL KEMASAN SKINCARE (2).jpg') }}" class="img-fluid rounded shadow-sm" alt="Company Profile" style="width: 100%; height: 200px; object-fit: cover;">
+                    <img src="{{ asset('public/images/Profil/SUASANA PABRIK SKINCARE DAN KOSMETIK. DENGAN MESIN PRODUKSI SEDANG MENGISI BOTOL KEMASAN SKINCARE (2).jpg') }}" class="img-fluid rounded shadow-sm" alt="Company Profile" style="width: 100%; height: 200px; object-fit: cover;">
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <img src="{{ asset('images/Profil/SUASANA PABRIK SKINCARE DAN KOSMETIK. DENGAN MESIN PRODUKSI SEDANG MENGISI BOTOL KEMASAN SKINCARE.jpg') }}" class="img-fluid rounded shadow-sm" alt="Company Profile" style="width: 100%; height: 200px; object-fit: cover;">
+                    <img src="{{ asset('public/images/Profil/SUASANA PABRIK SKINCARE DAN KOSMETIK. DENGAN MESIN PRODUKSI SEDANG MENGISI BOTOL KEMASAN SKINCARE.jpg') }}" class="img-fluid rounded shadow-sm" alt="Company Profile" style="width: 100%; height: 200px; object-fit: cover;">
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <img src="{{ asset('images/Profil/BUAT GAMBAR PRODUK SKINCARE SEDANG DI PRODUKSI (1).jpg') }}" class="img-fluid rounded shadow-sm" alt="Company Profile" style="width: 100%; height: 200px; object-fit: cover;">
+                    <img src="{{ asset('public/images/Profil/BUAT GAMBAR PRODUK SKINCARE SEDANG DI PRODUKSI (1).jpg') }}" class="img-fluid rounded shadow-sm" alt="Company Profile" style="width: 100%; height: 200px; object-fit: cover;">
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <img src="{{ asset('images/Profil/BUAT GAMBAR PRODUK SKINCARE SEDANG DI PRODUKSI (2).jpg') }}" class="img-fluid rounded shadow-sm" alt="Company Profile" style="width: 100%; height: 200px; object-fit: cover;">
+                    <img src="{{ asset('public/images/Profil/BUAT GAMBAR PRODUK SKINCARE SEDANG DI PRODUKSI (2).jpg') }}" class="img-fluid rounded shadow-sm" alt="Company Profile" style="width: 100%; height: 200px; object-fit: cover;">
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <img src="{{ asset('images/Profil/BUAT GAMBAR PRODUK SKINCARE SEDANG DI PRODUKSI (3).jpg') }}" class="img-fluid rounded shadow-sm" alt="Company Profile" style="width: 100%; height: 200px; object-fit: cover;">
+                    <img src="{{ asset('public/images/Profil/BUAT GAMBAR PRODUK SKINCARE SEDANG DI PRODUKSI (3).jpg') }}" class="img-fluid rounded shadow-sm" alt="Company Profile" style="width: 100%; height: 200px; object-fit: cover;">
                 </div>
             </div>
         </div>
