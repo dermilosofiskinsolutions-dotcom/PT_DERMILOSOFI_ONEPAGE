@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'PT. DERMILOSOFI | Skin Solutions')</title>
     <!-- Favicon / tab logo -->
-    <link rel="icon" type="image/png" href="{{ asset('storage/images/logo.png') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -15,7 +15,7 @@
     <style>
         * { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
         body {
-            background: linear-gradient(135deg, rgba(0,74,173,0.1) 0%, rgba(255,255,255,0.9) 100%), url('{{ asset('storage/images/background/background1.png') }}') no-repeat center center fixed;
+            background: linear-gradient(135deg, rgba(0,74,173,0.1) 0%, rgba(255,255,255,0.9) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center fixed;
             background-size: cover;
             color: #222;
             min-height: 100vh;
@@ -42,7 +42,7 @@
         }
 
         footer {
-            background: linear-gradient(135deg, rgba(0,74,173,0.9) 0%, rgba(0,123,255,0.9) 100%), url('{{ asset('storage/images/background/background1.png') }}') no-repeat center center;
+            background: linear-gradient(135deg, rgba(0,74,173,0.9) 0%, rgba(0,123,255,0.9) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center;
             background-size: cover;
             color: white;
             text-align: center;
@@ -78,7 +78,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="/">
-                <img src="{{ asset('storage/images/logo.png') }}" alt="Logo">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo">
                 <span class="fw-bold" style="color: #0292d8;">DERMILOSOFI</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

@@ -9,7 +9,7 @@
     <style>
         * { font-family: 'Poppins', sans-serif; }
         body {
-            background: linear-gradient(135deg, rgba(0,74,173,0.1) 0%, rgba(255,255,255,0.9) 100%), url('{{ asset('storage/images/background/background1.png') }}') no-repeat center center fixed;
+            background: linear-gradient(135deg, rgba(0,74,173,0.1) 0%, rgba(255,255,255,0.9) 100%), url('{{ asset('images/background/background1.png') }}') no-repeat center center fixed;
             background-size: cover;
             min-height: 100vh;
         }
