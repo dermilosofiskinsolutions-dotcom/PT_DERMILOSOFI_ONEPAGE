@@ -787,7 +787,7 @@
                     <div class="product-card" data-aos="fade-up" data-aos-delay="{{ 300 + ($index * 100) }}">
                         @if($product->image_path)
                             <a href="#productModal{{ $product->id }}" data-bs-toggle="modal" data-bs-target="#productModal{{ $product->id }}">
-                                <img src="{{ asset($product->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
+                                <img src="{{ asset('storage/' . $product->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
                             </a>
 @else
     <img src="{{ asset('images/PRODUK MAKLOON/ACNE SPOT DRYING LOTION.jpg') }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
@@ -815,7 +815,7 @@
                     <div class="product-card" data-aos="fade-up" data-aos-delay="{{ 700 + ($index * 100) }}">
                         @if($product->image_path)
                             <a href="#productModal{{ $product->id }}" data-bs-toggle="modal" data-bs-target="#productModal{{ $product->id }}">
-                                <img src="{{ asset($product->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
+                                <img src="{{ asset('storage/' . $product->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
                             </a>
 @else
     <img src="{{ asset('images/PRODUK MESIN/1.png') }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
@@ -846,8 +846,8 @@
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="product-card" data-aos="fade-up" data-aos-delay="{{ 300 + ($loop->index * 100) }}">
                         @if($blog->image_path)
-                            <a href="{{ asset($blog->image_path) }}" data-lightbox="blog" data-title="{{ $blog->title }}">
-                                <img src="{{ asset($blog->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
+                            <a href="{{ asset('storage/' . $blog->image_path) }}" data-lightbox="blog" data-title="{{ $blog->title }}">
+                                <img src="{{ asset('storage/' . $blog->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
                             </a>
 @else
     <img src="{{ asset('images/BLOG/1.png') }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
@@ -896,7 +896,7 @@
                 </div>
                 <div class="modal-body">
 @if($product->image_path)
-    <img src="{{ asset($product->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="width: 100%; border-radius: 10px !important;">
+    <img src="{{ asset('storage/' . $product->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="width: 100%; border-radius: 10px !important;">
 @else
     @if($product->category == 'maklon')
         <img src="{{ asset('images/PRODUK MAKLOON/ACNE SPOT DRYING LOTION.jpg') }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="width: 100%; border-radius: 10px !important;">
