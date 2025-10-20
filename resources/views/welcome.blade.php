@@ -449,7 +449,7 @@
     <section id="hero" data-aos="fade-up" style="position: relative;">
         <div class="container-fluid text-center" style="position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin-top: 60px;">
             <div>
-                <h1 data-aos="fade-up" data-aos-delay="100">Solusi Maklon Skincare Profesional</h1>
+                <h1 data-aos="fade-up" data-aos-delay="100">Solusi Maklon Skincare Professional</h1>
                 <p data-aos="fade-up" data-aos-delay="400">PT. DERMILOSOFI hadir membantu Anda mewujudkan brand skincare impian dengan layanan formulasi, produksi, dan legalitas lengkap.</p>
             </div>
                 <div style="width: 100%; max-width: 1400px; margin: 30px auto 0 auto; display: flex; justify-content: center; align-items: center;">
@@ -738,7 +738,7 @@
                                     <ul class="list-unstyled">
                                         <li>• Free desain & mockup kemasan</li>
                                         <li>• Free video promosi</li>
-                                        <li>• Free ongkir franco Semarang</li>
+                                        <li>• Free ongkir</li>
                                         <li>• Pembayaran 50% PO, 50% kirim</li>
                                     </ul>
                                 </div>
@@ -754,7 +754,7 @@
                                         <li>• Free biaya sertifikasi halal</li>
                                         <li>• Free video promosi + kunjungan industri</li>
                                         <li>• Pembayaran 50% PO, 50% kirim</li>
-                                        <li>• Free ongkir franco Semarang</li>
+                                        <li>• Free ongkir</li>
                                     </ul>
                                 </div>
                             </div>
