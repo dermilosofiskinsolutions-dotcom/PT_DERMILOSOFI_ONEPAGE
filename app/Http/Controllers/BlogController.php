@@ -44,7 +44,7 @@ class BlogController extends Controller
         $data = $request->all();
 
         if ($request->hasFile('image')) {
-            $data['image_path'] = $request->file('image')->store('storage/blogs', 'public');
+            $data['image_path'] = $request->file('image')->store('blogs', 'public');
         }
 
         $blog = Blog::create($data);
@@ -95,7 +95,7 @@ class BlogController extends Controller
             if ($blog->image_path) {
                 Storage::disk('public')->delete($blog->image_path);
             }
-            $data['image_path'] = $request->file('image')->store('storage/blogs', 'public');
+            $data['image_path'] = $request->file('image')->store('blogs', 'public');
         }
 
         $blog->update($data);
