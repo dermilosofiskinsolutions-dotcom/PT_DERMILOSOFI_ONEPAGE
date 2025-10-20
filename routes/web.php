@@ -34,6 +34,11 @@ Route::get('/apply', function () {
     return view('apply');
 })->name('apply');
 
+Route::get('/product', function () {
+    $products = Product::where('is_active', true)->get();
+    return view('product', compact('products'));
+})->name('product');
+
 Route::post('/apply', [ApplicantController::class, 'store'])->name('apply.post');
 
 // Admin routes for content management

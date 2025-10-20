@@ -434,7 +434,7 @@
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link" href="#hero"><i class="fas fa-home me-1"></i>Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#profil"><i class="fas fa-user me-1"></i>Profil</a></li>
-                <li class="nav-item"><a class="nav-link" href="#products"><i class="fas fa-box me-1"></i>Produk</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('product') }}"><i class="fas fa-box me-1"></i>Produk</a></li>
                 <li class="nav-item"><a class="nav-link" href="#alur-maklon"><i class="fas fa-route me-1"></i>Alur Maklon</a></li>
                 <li class="nav-item"><a class="nav-link" href="#blog"><i class="fas fa-blog me-1"></i>Blog</a></li>
                 <li class="nav-item"><a class="nav-link" href="#testimoni"><i class="fas fa-star me-1"></i>Testimoni</a></li>
@@ -561,6 +561,19 @@
                 <div class="col-md-4 col-sm-6">
                     <img src="{{ asset('public/images/Profil/BUAT GAMBAR PRODUK SKINCARE SEDANG DI PRODUKSI (3).jpg') }}" class="img-fluid rounded shadow-sm" alt="Company Profile" style="width: 100%; height: 200px; object-fit: cover;">
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produk Kami Button -->
+    <section id="produk-button" class="leaf-bg" data-aos="fade-up" style="padding: 80px 20px; position: relative;">
+        <div class="container-fluid text-center" style="background: transparent; box-shadow: none; border-radius: 0; padding: 0; margin: 0;">
+            <div class="section-title" style="margin-bottom: 40px;">
+                <h2 data-aos="fade-up" data-aos-delay="100" style="color: #004aad; font-weight: 700; font-size: 2.5rem;">Produk Kami</h2>
+                <p data-aos="fade-up" data-aos-delay="200">Temukan berbagai pilihan produk skincare maklon dan mesin yang dapat disesuaikan dengan kebutuhan brand Anda.</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="300">
+                <a href="{{ route('product') }}" class="btn btn-primary btn-lg" style="padding: 15px 40px; font-size: 1.2rem; font-weight: 600; border-radius: 50px; text-decoration: none; display: inline-block;">Lihat Produk Kami</a>
             </div>
         </div>
     </section>
@@ -765,74 +778,7 @@
         </div>
     </section>
 
-    <!-- Produk -->
-    <section id="products" class="leaf-bg" data-aos="fade-up" style="min-height: 100vh; padding: 150px 20px; position: relative; display: flex; align-items: center; justify-content: center;">
-        <div class="container-fluid" style="background: transparent; box-shadow: none; border-radius: 0; padding: 0; margin: 0;">
-            <div class="section-title">
-                <h2 data-aos="fade-up" data-aos-delay="100">Produk Kami</h2>
-                <p data-aos="fade-up" data-aos-delay="200">Kami menyediakan berbagai pilihan produk skincare maklon dan produk mesin yang dapat disesuaikan dengan kebutuhan brand Anda.</p>
-            </div>
 
-            @php
-                $maklonProducts = $products->where('category', 'maklon');
-                $mesinProducts = $products->where('category', 'mesin');
-            @endphp
-
-            <!-- Produk Maklon -->
-            @if($maklonProducts->count() > 0)
-            <h3 data-aos="fade-up" data-aos-delay="250" style="text-align: center; margin-bottom: 30px; color: #004aad; font-size: 2.5rem; font-weight: 700;">Produk Maklon</h3>
-            <div class="row g-4 justify-content-center">
-                @foreach($maklonProducts as $index => $product)
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="product-card" data-aos="fade-up" data-aos-delay="{{ 300 + ($index * 100) }}">
-                        @if($product->image_path)
-                            <a href="#productModal{{ $product->id }}" data-bs-toggle="modal" data-bs-target="#productModal{{ $product->id }}">
-                                <img src="{{ asset('storage/' . $product->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
-                            </a>
-@else
-    <img src="{{ asset('images/PRODUK MAKLOON/ACNE SPOT DRYING LOTION.jpg') }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
-@endif
-                        <h6 style="font-size: 1rem; font-weight: 600;">{{ $product->name }}</h6>
-                        @if($product->price)
-                            <p style="font-size: 0.9rem; color: #004aad; font-weight: 600;">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
-                        @endif
-                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#productModal{{ $product->id }}">Lihat Detail</button>
-                        <a href="https://wa.me/dermilosofiskinsolutions" class="btn btn-outline-primary btn-sm d-block mt-2" target="_blank">Hubungi via WA</a>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-            @endif
-
-            <hr style="border: 1px solid #004aad; margin: 50px auto; width: 80%;">
-
-            <!-- Produk Mesin -->
-            @if($mesinProducts->count() > 0)
-            <h3 data-aos="fade-up" data-aos-delay="650" style="text-align: center; margin: 50px 0 30px 0; color: #004aad; font-size: 2.5rem; font-weight: 700;">Produk Mesin</h3>
-            <div class="row g-4 justify-content-center">
-                @foreach($mesinProducts as $index => $product)
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="product-card" data-aos="fade-up" data-aos-delay="{{ 700 + ($index * 100) }}">
-                        @if($product->image_path)
-                            <a href="#productModal{{ $product->id }}" data-bs-toggle="modal" data-bs-target="#productModal{{ $product->id }}">
-                                <img src="{{ asset('storage/' . $product->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
-                            </a>
-@else
-    <img src="{{ asset('images/PRODUK MESIN/1.png') }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
-@endif
-                        <h6 style="font-size: 1rem; font-weight: 600;">{{ $product->name }}</h6>
-                        @if($product->price)
-                            <p style="font-size: 0.9rem; color: #004aad; font-weight: 600;">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
-                        @endif
-                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#productModal{{ $product->id }}">Lihat Detail</button>
-                        <a href="https://wa.me/dermilosofiskinsolutions" class="btn btn-outline-primary btn-sm d-block mt-2" target="_blank">Hubungi via WA</a>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-            @endif
-        </div>
-    </section>
 
     <!-- Blog -->
     <section id="blog" class="leaf-bg" data-aos="fade-up" style="min-height: 100vh; padding: 150px 20px; position: relative; display: flex; align-items: center; justify-content: center; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
