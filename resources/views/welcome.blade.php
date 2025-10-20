@@ -787,7 +787,7 @@
                     <div class="product-card" data-aos="fade-up" data-aos-delay="{{ 300 + ($index * 100) }}">
                         @if($product->image_path)
                             <a href="{{ asset('storage/' . $product->image_path) }}" data-lightbox="maklon" data-title="{{ $product->name }}">
-                                <img src="{{ asset('storage/' . $product->image_path) }}" class="img-fluid mb-3" alt="{{ $product->name }}">
+                                <img src="{{ asset('storage/' . $product->image_path) }}" alt="{{ $product->name }}" width="150">
                             </a>
 @else
     <img src="{{ asset('images/PRODUK MAKLOON/ACNE SPOT DRYING LOTION.jpg') }}" class="img-fluid mb-3" alt="{{ $product->name }}">
@@ -1069,10 +1069,10 @@
                 <div class="col-md-4">
                     <h5 class="fw-bold mb-3">Kontak Kami</h5>
                     <ul class="list-unstyled" style="line-height: 2;">
-                        <li><i class="fas fa-envelope me-2 text-primary"></i> dermilosofiskinsolutions@gmail.com</li>
-                        <li><i class="fas fa-phone me-2 text-primary"></i> +62 856-9580-9589</li>
-                        <li><i class="fas fa-map-marker-alt me-2 text-primary"></i> MANUFACTURE: Jl.Wanajaya No.26,RT.01/RW.01,Pasir Jaya,Kec.Bogor Bar.,Kota Bogor,Jawa Barat 16119</li>
-                        <li><i class="fas fa-map-marker-alt me-2 text-primary"></i> MARKETING OFFICE: Wisma 46, 2nd Floor Unit 2.10, Jl. Jenderal Sudirman No.Kav. 1, RT.1/RW.8, Daerah Khusus Ibukota Jakarta 10220</li>
+                        <li style="font-size: 0.85rem;"><i class="fas fa-map-marker-alt me-2 text-primary"></i> Marketing Office: Wisma 46, 2nd Floor Unit 2.10, Jl. Jenderal Sudirman No.Kav. 1, RT.1/RW.8, Daerah Khusus Ibukota Jakarta 10220</li>
+                        <li style="font-size: 0.85rem;"><i class="fas fa-map-marker-alt me-2 text-primary"></i> Manufacture: Jl.Wanajaya No.26,RT.01/RW.01,Pasir Jaya,Kec.Bogor Bar.,Kota Bogor,Jawa Barat 16119</li>
+                        <li style="font-size: 0.9rem;"><i class="fas fa-phone me-2 text-primary"></i> +62 856-9580-9589</li>
+                        <li style="font-size: 0.9rem;"><i class="fas fa-envelope me-2 text-primary"></i> dermilosofiskinsolutions@gmail.com</li>
                     </ul>
                 </div>
 
@@ -1122,10 +1122,10 @@
             <div class="col-md-4 mb-4">
                 <h5 class="fw-bold mb-3" style="color: #004aad; font-size: 1.2rem; font-weight: 700;">Hubungi Kami</h5>
                 <ul class="list-unstyled" style="line-height: 2.2;">
-                    <li style="font-size: 0.9rem; color: #004aad; font-weight: 600;"><i class="fas fa-envelope me-2" style="color: #004aad;"></i> dermilosofiskinsolutions@gmail.com</li>
+                    <li style="font-size: 0.8rem; line-height: 1.4; color: #004aad; font-weight: 600;"><i class="fas fa-map-marker-alt me-2" style="color: #004aad;"></i> Marketing Office: Wisma 46, 2nd Floor Unit 2.10, Jl. Jenderal Sudirman No.Kav. 1, RT.1/RW.8, Daerah Khusus Ibukota Jakarta 10220</li>
+                    <li style="font-size: 0.8rem; line-height: 1.4; color: #004aad; font-weight: 600;"><i class="fas fa-map-marker-alt me-2" style="color: #004aad;"></i> Manufacture: Jl.Wanajaya No.26,RT.01/RW.01,Pasir Jaya,Kec.Bogor Bar.,Kota Bogor,Jawa Barat 16119</li>
                     <li style="font-size: 0.9rem; color: #004aad; font-weight: 600;"><i class="fas fa-phone me-2" style="color: #004aad;"></i> +62 856-9580-9589</li>
-                    <li style="font-size: 0.85rem; line-height: 1.4; color: #004aad; font-weight: 600;"><i class="fas fa-map-marker-alt me-2" style="color: #004aad;"></i> MANUFACTURE: Jl.Wanajaya No.26,RT.01/RW.01,Pasir Jaya,Kec.Bogor Bar.,Kota Bogor,Jawa Barat 16119</li>
-                    <li style="font-size: 0.85rem; line-height: 1.4; color: #004aad; font-weight: 600;"><i class="fas fa-map-marker-alt me-2" style="color: #004aad;"></i> MARKETING OFFICE: Wisma 46, 2nd Floor Unit 2.10, Jl. Jenderal Sudirman No.Kav. 1, RT.1/RW.8, Daerah Khusus Ibukota Jakarta 10220</li>
+                    <li style="font-size: 0.9rem; color: #004aad; font-weight: 600;"><i class="fas fa-envelope me-2" style="color: #004aad;"></i> dermilosofiskinsolutions@gmail.com</li>
                     <li><a href="https://wa.me/dermilosofiskinsolutions" class="text-decoration-none fw-bold" target="_blank" style="font-size: 0.95rem; color: #004aad; font-weight: 600;">
                         <i class="fab fa-whatsapp me-2" style="color: #25d366;"></i> WhatsApp
                     </a></li>
