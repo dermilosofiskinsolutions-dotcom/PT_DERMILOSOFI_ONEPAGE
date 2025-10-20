@@ -1,4 +1,0 @@
-- [x] Change .category-navbar position from fixed to sticky in resources/views/product.blade.php
-- [x] Remove "Semua Kategori" link from category navbar
-- [x] Update JavaScript to default active to "#maklon" instead of "#products"
-- [x] Center the category navbar choices
