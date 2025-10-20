@@ -781,22 +781,23 @@
             <!-- Produk Maklon -->
             @if($maklonProducts->count() > 0)
             <h3 data-aos="fade-up" data-aos-delay="250" style="text-align: center; margin-bottom: 30px; color: #004aad; font-size: 2.5rem; font-weight: 700;">Produk Maklon</h3>
-            <div class="row g-4">
+            <div class="row g-4 justify-content-center">
                 @foreach($maklonProducts as $index => $product)
-                <div class="col-md-3">
+                <div class="col-12 col-sm-6 col-md-3">
                     <div class="product-card" data-aos="fade-up" data-aos-delay="{{ 300 + ($index * 100) }}">
                         @if($product->image_path)
-                            <a href="{{ asset('storage/' . $product->image_path) }}" data-lightbox="maklon" data-title="{{ $product->name }}">
-                                <img src="{{ asset('storage/' . $product->image_path) }}" alt="{{ $product->name }}" width="150">
+                            <a href="#productModal{{ $product->id }}" data-bs-toggle="modal" data-bs-target="#productModal{{ $product->id }}">
+                                <img src="{{ asset($product->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
                             </a>
 @else
-    <img src="{{ asset('images/PRODUK MAKLOON/ACNE SPOT DRYING LOTION.jpg') }}" class="img-fluid mb-3" alt="{{ $product->name }}">
+    <img src="{{ asset('images/PRODUK MAKLOON/ACNE SPOT DRYING LOTION.jpg') }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
 @endif
-                        <h6 class="text-center">{{ $product->name }}</h6>
+                        <h6 style="font-size: 1rem; font-weight: 600;">{{ $product->name }}</h6>
                         @if($product->price)
-                            <p class="text-center text-primary fw-bold">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
+                            <p style="font-size: 0.9rem; color: #004aad; font-weight: 600;">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
                         @endif
-                        <a href="https://wa.me/dermilosofiskinsolutions" class="btn btn-primary btn-sm d-block mx-auto" target="_blank">Hubungi via WA</a>
+                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#productModal{{ $product->id }}">Lihat Detail</button>
+                        <a href="https://wa.me/dermilosofiskinsolutions" class="btn btn-outline-primary btn-sm d-block mt-2" target="_blank">Hubungi via WA</a>
                     </div>
                 </div>
                 @endforeach
@@ -808,22 +809,23 @@
             <!-- Produk Mesin -->
             @if($mesinProducts->count() > 0)
             <h3 data-aos="fade-up" data-aos-delay="650" style="text-align: center; margin: 50px 0 30px 0; color: #004aad; font-size: 2.5rem; font-weight: 700;">Produk Mesin</h3>
-            <div class="row g-4">
+            <div class="row g-4 justify-content-center">
                 @foreach($mesinProducts as $index => $product)
-                <div class="col-md-3">
+                <div class="col-12 col-sm-6 col-md-3">
                     <div class="product-card" data-aos="fade-up" data-aos-delay="{{ 700 + ($index * 100) }}">
                         @if($product->image_path)
-                            <a href="{{ asset('storage/' . $product->image_path) }}" data-lightbox="mesin" data-title="{{ $product->name }}">
-                                <img src="{{ asset('storage/' . $product->image_path) }}" class="img-fluid mb-3" alt="{{ $product->name }}">
+                            <a href="#productModal{{ $product->id }}" data-bs-toggle="modal" data-bs-target="#productModal{{ $product->id }}">
+                                <img src="{{ asset($product->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
                             </a>
 @else
-    <img src="{{ asset('images/PRODUK MESIN/1.png') }}" class="img-fluid mb-3" alt="{{ $product->name }}">
+    <img src="{{ asset('images/PRODUK MESIN/1.png') }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
 @endif
-                        <h6 class="text-center">{{ $product->name }}</h6>
+                        <h6 style="font-size: 1rem; font-weight: 600;">{{ $product->name }}</h6>
                         @if($product->price)
-                            <p class="text-center text-primary fw-bold">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
+                            <p style="font-size: 0.9rem; color: #004aad; font-weight: 600;">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
                         @endif
-                        <a href="https://wa.me/dermilosofiskinsolutions" class="btn btn-primary btn-sm d-block mx-auto" target="_blank">Hubungi via WA</a>
+                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#productModal{{ $product->id }}">Lihat Detail</button>
+                        <a href="https://wa.me/dermilosofiskinsolutions" class="btn btn-outline-primary btn-sm d-block mt-2" target="_blank">Hubungi via WA</a>
                     </div>
                 </div>
                 @endforeach
@@ -844,8 +846,8 @@
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="product-card" data-aos="fade-up" data-aos-delay="{{ 300 + ($loop->index * 100) }}">
                         @if($blog->image_path)
-                            <a href="{{ asset('storage/' . $blog->image_path) }}" data-lightbox="blog" data-title="{{ $blog->title }}">
-                                <img src="{{ asset('storage/' . $blog->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
+                            <a href="{{ asset($blog->image_path) }}" data-lightbox="blog" data-title="{{ $blog->title }}">
+                                <img src="{{ asset($blog->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
                             </a>
 @else
     <img src="{{ asset('images/BLOG/1.png') }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;">
@@ -877,6 +879,42 @@
     <img src="{{ asset('images/BLOG/1.png') }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="width: 100%; border-radius: 10px !important;">
 @endif
                     {!! $blog->content !!}
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
+
+    <!-- Product Modals -->
+    @foreach($products as $product)
+    <div class="modal fade" id="productModal{{ $product->id }}" tabindex="-1" aria-labelledby="productModal{{ $product->id }}Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModal{{ $product->id }}Label">{{ $product->name }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+@if($product->image_path)
+    <img src="{{ asset($product->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="width: 100%; border-radius: 10px !important;">
+@else
+    @if($product->category == 'maklon')
+        <img src="{{ asset('images/PRODUK MAKLOON/ACNE SPOT DRYING LOTION.jpg') }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="width: 100%; border-radius: 10px !important;">
+    @else
+        <img src="{{ asset('images/PRODUK MESIN/1.png') }}" class="img-fluid mb-3 rounded" alt="{{ $product->name }}" style="width: 100%; border-radius: 10px !important;">
+    @endif
+@endif
+                    @if($product->description)
+                        {!! $product->description !!}
+                    @else
+                        <p>Deskripsi produk akan segera ditambahkan.</p>
+                    @endif
+                    @if($product->price)
+                        <p class="mt-3"><strong>Harga: Rp {{ number_format($product->price, 0, ',', '.') }}</strong></p>
+                    @endif
+                    <div class="mt-3">
+                        <a href="https://wa.me/dermilosofiskinsolutions" class="btn btn-primary" target="_blank">Hubungi via WhatsApp</a>
+                    </div>
                 </div>
             </div>
         </div>
