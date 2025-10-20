@@ -465,7 +465,7 @@
                             <div class="d-flex justify-content-center align-items-center" style="height: 350px;">
                                 <div class="text-center" style="max-width: 500px;">
 @if($blog->image_path)
-    <img src="{{ asset('images/' . str_replace('blogs/', 'BLOG/', $blog->image_path)) }}" class="img-fluid mb-2 rounded" alt="{{ $blog->title }}" style="max-height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;" data-aos="fade-up" data-aos-delay="200">
+    <img src="{{ asset('storage/' . $blog->image_path) }}" class="img-fluid mb-2 rounded" alt="{{ $blog->title }}" style="max-height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;" data-aos="fade-up" data-aos-delay="200">
 @else
     <img src="{{ asset('images/BLOG/1.png') }}" class="img-fluid mb-2 rounded" alt="{{ $blog->title }}" style="max-height: 200px; object-fit: cover; width: 100%; border-radius: 10px !important;" data-aos="fade-up" data-aos-delay="200">
 @endif
@@ -874,7 +874,7 @@
                 </div>
                 <div class="modal-body">
 @if($blog->image_path)
-    <img src="{{ asset('images/' . str_replace('blogs/', 'BLOG/', $blog->image_path)) }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="width: 100%; border-radius: 10px !important;">
+    <img src="{{ asset('storage/' . $blog->image_path) }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="width: 100%; border-radius: 10px !important;">
 @else
     <img src="{{ asset('images/BLOG/1.png') }}" class="img-fluid mb-3 rounded" alt="{{ $blog->title }}" style="width: 100%; border-radius: 10px !important;">
 @endif
